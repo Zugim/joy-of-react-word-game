@@ -1,5 +1,7 @@
 import React from "react";
 
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
+
 function GuessInput({
   handleSubmitGuess,
   guessedCorrectly,
@@ -25,7 +27,11 @@ function GuessInput({
         required
         pattern="[a-zA-Z]{5,5}"
         title="5 letter word"
-        disabled={guessedCorrectly || currentNoOfGuesses >= 6 ? true : false}
+        disabled={
+          guessedCorrectly || currentNoOfGuesses >= NUM_OF_GUESSES_ALLOWED
+            ? true
+            : false
+        }
         value={guess}
         onChange={(event) => {
           setGuess(event.target.value.toUpperCase());
