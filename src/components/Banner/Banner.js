@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 function Banner({ guessedCorrectly, currentNoOfGuesses, answer }) {
   if (guessedCorrectly) {
     return (
       <div className="happy banner">
         <p>
-          <strong>Congratulations!</strong> Got it in{' '}
-          <strong>{currentNoOfGuesses} guesses</strong>.
+          <strong>Congratulations!</strong> Got it in{" "}
+          <strong>{currentNoOfGuesses} </strong>
+          {currentNoOfGuesses === 1 ? "guess." : "guesses."}
         </p>
       </div>
     );
